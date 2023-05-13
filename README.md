@@ -13,7 +13,7 @@ User Stories
 - React
 - HTML/CSS
 - Bootstrap
-- Vanilla Javascript
+
 
 https://github.com/Ronnie95/back-end-to-do-app
 https://trello.com/b/Qcb7tIgW/to-do)
