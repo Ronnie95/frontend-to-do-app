@@ -4,9 +4,16 @@ these methods can be convienent for many, but not everyone has the best memory, 
 My to do app will be convienent for all it's users making it easy to operate, great design, and a peace of mind!
 
 User Stories
-- users will be able to add task for a specific date and time
-#Technologies used
+-users will be able to add task for specific days & time
+- edit their task
+- delete their task
+- show their completed task
+
+#Technologies used(more to come)
 - React
 - HTML/CSS
 - Bootstrap
 - Vanilla Javascript
+
+https://github.com/Ronnie95/back-end-to-do-app
+https://trello.com/b/Qcb7tIgW/to-do
