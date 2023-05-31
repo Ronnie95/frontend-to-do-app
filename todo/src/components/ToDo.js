@@ -1,11 +1,34 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
+
 
 
 function ToDo() {
     const [toDoForm, setToDoForm] = useState({
         do: "", 
     })
+
+    const [toDoInfo, setToDoInfo] = useState([])
+    
+    useEffect(() => {
+       
+
+        const fetchToDoInfo = async () => {
+          
+            try {
+               
+                const response = await fetch("http://localhost:4000/do");
+                //const response = await fetch("https://todolist-b60d.onrender.com");
+                const toDoData = await response.json();
+                setToDoInfo(toDoData);
+            } catch (error) {
+                
+            }
+        };
+        fetchToDoInfo();
+    }, []);
 
     function handleChange(e) {
         setToDoForm((previousFormState) => ({
@@ -26,7 +49,11 @@ function ToDo() {
                 },
                 body: JSON.stringify(toDoForm)
             })
-            console.log(myToDo)
+            const myToDoString = await myToDo.json()
+            // calling this function with array and string
+            setToDoInfo([...toDoInfo, myToDoString]);
+
+           console.log(myToDoString)
         } catch(err){
             console.log(err)
         }
@@ -37,17 +64,33 @@ function ToDo() {
 <>
 <section>
 
-<form onSubmit={handleSubmit}>
+<form className="f"onSubmit={handleSubmit}>
     <input 
-        type ="text" 
+        type ="text"
         value={toDoForm.do}
         placeholder="What do you need to do?"
         onChange={handleChange}
         />
-    <input type ="submit" value="do it" />
+   <input type ="submit" value="Do It" />
   
 </form>
- 
+{toDoInfo.map((doIt, idx) => {
+   
+  //  console.log(doIt)
+    return(
+    <div key={idx}>
+            <toDoInfo doIt={doIt} />
+        <table>
+            <tr>
+            <td className="td">{doIt.do}</td>
+            </tr><Link to={`/${doIt._id}`}> <Button variant="outline-secondary">View</Button>{' '}</Link><Link to={`/${doIt._id}/edit`}> <Button variant="success">Edit</Button>{' '}</Link><Link to={`/${doIt._id}/delete`}>   <Button variant="danger">DELETE</Button>{' '}</Link>
+           
+        </table>
+      
+     </div>
+    )
+})}
+
 </section>
 
 
