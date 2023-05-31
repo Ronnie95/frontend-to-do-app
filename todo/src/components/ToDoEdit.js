@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { Button } from "react-bootstrap";
 
 
 function ToDoEdit() {
@@ -56,7 +55,7 @@ function ToDoEdit() {
                             <form onSubmit={handleSubmit}>
                                  <input type="text" value={editToDo.do} name="title" onChange={handleChange} />
                     
-                                 <Button variant="secondary">Edit</Button>{' '}
+                                <button>Edit</button>
                             </form> 
             </>
             

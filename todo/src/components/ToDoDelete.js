@@ -6,7 +6,7 @@ function ToDoDelete() {
     const {todoId} = useParams();
 
     async function removeToDo() {
-        console.log("fi")
+        //console.log("fi")
         try {
             // Make an API call to the DELETE route!
             await fetch(`http://localhost:4000/do/${todoId}`, {

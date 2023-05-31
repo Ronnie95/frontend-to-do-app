@@ -53,7 +53,7 @@ function ToDo() {
             // calling this function with array and string
             setToDoInfo([...toDoInfo, myToDoString]);
 
-           console.log(myToDoString)
+          // console.log(myToDoString)
         } catch(err){
             console.log(err)
         }
@@ -101,42 +101,7 @@ function ToDo() {
     )
 };
 
-// const handleChange = (e) => {
-//     setToDoForm({...toDoForm, [e.target.do]: e.target.value});
-// };
-// const createToDoInfo = async (ToDoInfo) => {
-//     try {
 
-//         // make post request to create people
-// const newPerson = await fetch("http://localhost:4000/do", {
-//     method: "post",
-//     headers: {
-//         "Content-Type": "application/json",
-//     },
-//         body: JSON.stringify(ToDoInfo),
-// });
-
-//         // testing API create request
-//     // console.log(await newPerson.json())
-
-//         // trigger fetch of updated People to replace stale content
-//         getToDoInfo()
-
-//     } catch (err) {
-//         console.log(err)
-        
-//     }
-
-// };
-
-// const handleSubmit = async (e) => {
-    
-// 		e.preventDefault()
-//     const newPerson = await createPeople()
-
-// 		// reset the form
-//     setNewForm({ name: "", image: "", title: "" })
-// }
 
 
 

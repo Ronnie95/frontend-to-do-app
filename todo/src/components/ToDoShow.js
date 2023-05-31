@@ -10,7 +10,7 @@ function ToDoShow () {
 
     const { todoId } = useParams();
     //const URL = `http://localhost:4000/do/${id}`
-    console.log(todoId);
+   // console.log(todoId);
     async function getToDo() {
         try{
             let myToDo = await fetch(`http://localhost:4000/do/${todoId}`);
@@ -20,7 +20,7 @@ function ToDoShow () {
             console.log(err);
         }
     }
-    console.log(`Current Person: ${JSON.stringify(toDo)}`)
+   // console.log(`Current Person: ${JSON.stringify(toDo)}`)
     useEffect(() => {
            getToDo();
          }, [])
@@ -38,27 +38,6 @@ function ToDoShow () {
     )
 
 
-    // useEffect(() => {
-    //     getToDo();
-    // }, [])
-
-    
-
-//     const loaded = () => (
-//         <div className="person">
-//             <h1>Show Page</h1>
-//             <h2>{toDo.do}</h2>
-           
-           
-//     </div>
-//     )
-
-// const loading = () => {
-//         return <h1>Loading.........</h1>
-// 				// alternatively you can use the spinner 
-// }
-
-// return ToDo ? loaded() : loading()
 
 
 }
