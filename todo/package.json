@@ -38,6 +38,7 @@
     ]
   },
   "devDependencies": {
+    "netlify-cli": "^15.2.0",
     "react-router-dom": "^6.11.2"
   }
 }
